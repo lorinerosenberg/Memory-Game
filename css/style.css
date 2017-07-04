@@ -1,0 +1,16 @@
+body{
+    padding-top: 70px;
+    text-align: center;
+    background-color: cornsilk;
+}
+.navbar {
+    background-color: rgba(95, 158, 160, 0.8);
+}
+#card{
+    border: 1px solid black;
+    height: 250px;
+    width: 200px;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 20px;
+}
