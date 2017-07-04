@@ -4,15 +4,19 @@ body{
     background-color: cornsilk;
 }
 .navbar {
-    background-color: rgba(95, 158, 160, 0.8);
+    background-color: rgba(164, 2, 0, 0.75);
 }
-#card{
-    border: 1px solid black;
-    height: 250px;
-    width: 200px;
+.card{
+    -webkit-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
+    height: 150px;
+    width: 150px;
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
     border-radius: 20px;
     background-image: url(images/texture.jpg);
-    background-size: 100%;
+    background-size: 115%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
