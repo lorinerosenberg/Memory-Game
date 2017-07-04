@@ -13,6 +13,6 @@ body{
     display: inline-block;
     margin: 10px;
     border-radius: 20px;
-    background-image: url(/images/texture.jpg);
+    background-image: url(images/texture.jpg);
     background-size: 100%;
 }
