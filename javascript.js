@@ -8,6 +8,7 @@ idArray.sort(function(a, b){return 0.5 - Math.random()});
 console.log(idArray);
 
 var cardID;
+
 //function to randomly assign ids to cards "shuffle"
 function shuffleCards() {
     for (var i = 0; i < idArray.length; i++) {
@@ -16,11 +17,10 @@ function shuffleCards() {
         cardID[i].style.backgroundImage = "url(images/" +  cardID[i].getAttribute("data-id") + ".jpg)";
     }
 }
-
-
-
+//shuffle cards on load
 shuffleCards();
 
-
-
+function flipCard(){
+    event.target.style.opacity = "1";
+}
 

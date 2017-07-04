@@ -1,12 +1,26 @@
 body{
-    padding-top: 70px;
+    padding-top: 100px;
     text-align: center;
-    background-color: cornsilk;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
 }
 .navbar {
-    background-color: rgba(164, 2, 0, 0.75);
+    background-color: #8b0000;
 }
-.card{
+.navbar h2{
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.btn{
+    background-color: white;
+    color: red;
+    font-weight: 900;
+    font-size: 15px;
+    padding: 5px;
+}
+.cardContainer{
     -webkit-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
     box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
@@ -16,7 +30,19 @@ body{
     margin: 5px;
     border-radius: 20px;
     background-image: url(images/texture.jpg);
+}
+.cardContainer:hover{
+    border: 3px solid black;
+}
+.card{
+    -webkit-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
     background-size: 115%;
     background-repeat: no-repeat;
     background-position: center;
+    opacity: 0;
 }
