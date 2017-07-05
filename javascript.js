@@ -15,11 +15,12 @@ var correctGuesses = 0;
 
 //function to randomly assign ids to cards "shuffle"
 function shuffleCards() {
-    for (var i = 0; i < idArray.length; i++) {
-        cardID[i].setAttribute("data-id", idArray[i]);
-        cardID[i].style.backgroundImage = "url(images/" +  cardID[i].getAttribute("data-id") + ".jpg)";
-        cardID[i].addEventListener("click", flipCard);
-    }
+        for (var i = 0; i < idArray.length; i++) {
+            cardID[i].setAttribute("data-id", idArray[i]);
+            cardID[i].style.backgroundImage = "url(images/" + cardID[i].getAttribute("data-id") + ".jpg)";
+            cardID[i].addEventListener("click", flipCard);
+        }
+
 }
 //shuffle cards on load
 shuffleCards();
@@ -27,24 +28,35 @@ shuffleCards();
 //function to "flip" cards on click and assign first card and second card
 function flipCard() {
     if(choices === 2){
-        console.log("you've picked two cards");
+        return;
     }
     else if(choices === 0){
         event.target.style.opacity = "1";
-        firstCard = event.target.getAttribute("data-id");
+        firstCard = event.target;
+
         choices = 1;
-        console.log("first choice done");
     }
     else{
         event.target.style.opacity = "1";
-        secondCard = event.target.getAttribute("data-id");
+        secondCard = event.target;
         choices = 2;
-        console.log("second  choice done");
+        setTimeout(checkCards, 1000);
     }
 }
 
+//function to see if chosen cards match and to keep count of matches
+function checkCards(){
+    if(correctGuesses===9){
+        console.log("you won!");
+    }
+    else if(firstCard.getAttribute("data-id") === secondCard.getAttribute("data-id")){
+        correctGuesses += 1;
+    }
+    else{
+        firstCard.style.opacity = "0";
+        secondCard.style.opacity = "0";
+    }
+    choices = 0;
+}
 
 
-
-
-//function to see if chosen cards are a match
