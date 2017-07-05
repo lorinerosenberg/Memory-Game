@@ -21,6 +21,7 @@ body{
     padding: 5px;
 }
 .cardContainer{
+    border:10px solid whitesmoke;
     -webkit-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
     box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
