@@ -1,21 +1,15 @@
 body{
-    padding-top: 100px;
+    padding-top: 13px;
     text-align: center;
-    background-color: white;
     font-family: "Roboto", sans-serif;
+    background-image: url(images/bg.jpg);
 }
-.navbar {
-    background-color: #8b0000;
-}
-.navbar h2{
-    color: white;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+.sideBar h3{
+    margin: 50px 0 65px 0;
 }
 .btn{
     background-color: white;
-    color: red;
+    color: black;
     font-weight: 900;
     font-size: 15px;
     padding: 5px;
@@ -30,7 +24,8 @@ body{
     display: inline-block;
     margin: 5px;
     border-radius: 20px;
-    background-image: url(images/texture.jpg);
+    background-image: url(images/cardback1.jpg);
+    background-size: 107%;
 }
 .cardContainer:hover{
     border: 3px solid black;
@@ -46,4 +41,25 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    .cardContainer{
+        height: 125px;
+        width: 125px;
+    }
+    .card{
+        height: 125px;
+        width: 125px;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .cardContainer{
+        height: 100px;
+        width: 100px;
+    }
+    .card{
+        height: 100px;
+        width: 100px;
+    }
 }

@@ -75,6 +75,9 @@ function newGame(){
     shuffleCards();
 }
 
+//function to change images of cards
+
+
 
 //event listener to shuffle cards after page load
 document.getElementById("shuffle").addEventListener("click", shuffleCards);
