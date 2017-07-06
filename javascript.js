@@ -5,10 +5,12 @@
 
 //stores global variables
 var cardID = document.getElementsByClassName("card");
+var overlay = document.getElementById("overlay");
 var choices = 0;
 var firstCard;
 var secondCard;
 var correctGuesses = 0;
+var theme = "cute";
 
 //function to randomly assign ids to cards "shuffle"
 function shuffleCards() {
@@ -18,7 +20,7 @@ function shuffleCards() {
     //loop to assign id's to cards
         for (var i = 0; i < idArray.length; i++) {
             cardID[i].setAttribute("data-id", idArray[i]);
-            cardID[i].style.backgroundImage = "url(images/" + cardID[i].getAttribute("data-id") + ".jpg)";
+            cardID[i].style.backgroundImage = "url(images/" + theme + "/" + cardID[i].getAttribute("data-id") + ".jpg)";
             cardID[i].addEventListener("click", flipCard);
         }
 
@@ -49,7 +51,7 @@ function flipCard() {
 function checkCards(){
     //once counter reaches 10 all cards have been matched
     if(correctGuesses===9){
-        console.log("you won!");
+        overlay.style.display = "block";
     }
     else if(firstCard.getAttribute("data-id") === secondCard.getAttribute("data-id")){
         //add to counter for each correct guess
@@ -71,11 +73,10 @@ function newGame(){
         var card = document.getElementsByClassName("card")[i];
         card.style.opacity = "0";
     }
-    choices = 0;
+    overlay.style.display = "none";
+    correctGuesses = 0;
     shuffleCards();
 }
-
-//function to change images of cards
 
 
 
@@ -83,5 +84,9 @@ function newGame(){
 document.getElementById("shuffle").addEventListener("click", shuffleCards);
 //event listener to start new game
 document.getElementById("new").addEventListener("click", newGame);
+//event listener to change themes of cards
+document.getElementById("themeOne").addEventListener("click", function(){theme = "cute"; newGame()});
+document.getElementById("themeTwo").addEventListener("click", function(){theme = "scenery"; newGame()});
+document.getElementById("themeThree").addEventListener("click", function(){theme = "food"; newGame()});
 
 
