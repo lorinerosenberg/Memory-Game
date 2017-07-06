@@ -67,9 +67,11 @@ function checkCards(){
 
 //function to start new game
 function newGame(){
+    for (var i = 0; i<20; i ++){
+        var card = document.getElementsByClassName("card")[i];
+        card.style.opacity = "0";
+    }
     choices = 0;
-    var card = document.getElementsByClassName("cards");
-    card.style.opacity = "0";
     shuffleCards();
 }
 
