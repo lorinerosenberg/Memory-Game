@@ -2,10 +2,13 @@
  * Created by hillarosenberg on 2017/07/03.
  */
 
+var MemoryGame = {};
 
 //stores global variables
+var idArray = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10];
 var cardID = document.getElementsByClassName("card");
 var overlay = document.getElementById("overlay");
+var cardBack = document.getElementsByClassName("cardContainer");
 var choices = 0;
 var firstCard;
 var secondCard;
@@ -15,16 +18,17 @@ var theme = "cute";
 //function to randomly assign ids to cards "shuffle"
 function shuffleCards() {
     // create random shuffle of arrays to assign as divs
-    var idArray = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10];
-    idArray.sort(function(a, b){return 0.5 - Math.random()});
+    idArray.sort(function (a, b) {
+        return 0.5 - Math.random()
+    });
     //loop to assign id's to cards
-        for (var i = 0; i < idArray.length; i++) {
-            cardID[i].setAttribute("data-id", idArray[i]);
-            cardID[i].style.backgroundImage = "url(images/" + theme + "/" + cardID[i].getAttribute("data-id") + ".jpg)";
-            cardID[i].addEventListener("click", flipCard);
-        }
-
+    for (var i = 0; i < idArray.length; i++) {
+        cardID[i].setAttribute("data-id", idArray[i]);
+        cardID[i].style.backgroundImage = "url(images/" + theme + "/" + cardID[i].getAttribute("data-id") + ".jpg)";
+        cardID[i].addEventListener("click", flipCard);
+    }
 }
+
 //shuffle cards on load
 shuffleCards();
 
@@ -88,5 +92,9 @@ document.getElementById("new").addEventListener("click", newGame);
 document.getElementById("themeOne").addEventListener("click", function(){theme = "cute"; newGame()});
 document.getElementById("themeTwo").addEventListener("click", function(){theme = "scenery"; newGame()});
 document.getElementById("themeThree").addEventListener("click", function(){theme = "food"; newGame()});
-
-
+//event listener to change difficulty of cards
+document.getElementById("easy").addEventListener("click", function(){
+    idArray = [1,2,3,4,5,1,2,3,4,5];
+    newGame()});
+document.getElementById("medium").addEventListener("click", function(){idArray = [1,2,3,4,5,6,7,1,2,3,4,5,6,7]; newGame()});
+document.getElementById("hard").addEventListener("click", function(){idArray = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]; newGame()});

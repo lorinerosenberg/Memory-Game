@@ -25,20 +25,17 @@ body{
     display: inline-block;
     margin: 5px;
     border-radius: 20px;
+    background-size: cover;
+    box-sizing: border-box;
     background-image: url(images/cardback1.jpg);
-    background-size: 107%;
 }
 .cardContainer:hover{
-    border: 3px solid black;
+    border: 10px solid black;
 }
 .card{
-    -webkit-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
-    box-shadow: 10px 9px 9px -6px rgba(0,0,0,0.75);
-    height: 150px;
-    width: 150px;
-    border-radius: 20px;
-    background-size: 115%;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
